@@ -11,11 +11,16 @@ class Header extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
+                        
                         <React.Fragment>
                             <NavLink to="/" > Home</NavLink>
-                            <NavLink to="/clientes" activeClassName="Cliente"> Clientes </NavLink>
+                            <NavLink to="/sucursales" activeClassName="DatosSucursales"> Sucursales </NavLink>
+                            <NavLink to="/clientes" activeClassName="CardUsuario"> Clientes </NavLink>
                         </React.Fragment>
                     </Nav>
+                    <React.Fragment>
+                        <NavLink to="/Login" activeClassName="Login"> Iniciar Sesion </NavLink>
+                    </React.Fragment>
                 </Navbar.Collapse>
             </Navbar>
         );
