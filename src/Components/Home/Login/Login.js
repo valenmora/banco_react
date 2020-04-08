@@ -2,27 +2,44 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'react-bootstrap';
 
+import {api_banco} from './../../../Constants/api_url';
+
 
 class Login extends Component {
 
-    constructor(){
-        super();
+    handleLogin (username){
+        if (this.user.results.username === username) {
+                return "Ok .. "
+            } 
+                   
+            /*if(this.state.user === this.state.userMio && password === this.state.passwordMio)
+        {
+            return console.log("ok")
+        }*/
+    };
+
+    constructor(props){
+        super(props);
         this.state = {
-            user: "",
-            password: "",
-            userMio:  "valen",
-            passwordMio:"123",
+            isFetch:true,
+            user: []
         }
     }
 
-    handleLogin (user,password){
-        if(this.state.user === this.state.userMio && password === this.state.passwordMio)
-        {
-            return console.log("ok")
-        }
-    };
+    componentDidMount() {
+        fetch(api_banco).then(res => {
+       return res.json();
+   
+       })
+       .then(data => {
+           this.setState({isFetch: false,user: data.results[1].login})
+           
+       })
+       
+   }
 
     render() {
+        console.log(".>", this.state.user);
         return (
             <div className="Login">
             <div className="row mb-4">
@@ -30,7 +47,7 @@ class Login extends Component {
                 <Form>
                 <Form.Group controlId="formBasicUser">
                     <Form.Label>Username </Form.Label>
-                    <Form.Control type="user" placeholder="Enter username" />
+                    <Form.Control type="username" placeholder="Enter username" />
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
@@ -40,7 +57,7 @@ class Login extends Component {
                 <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                <Button variant="primary" onClick={ this.handleLogin(this.user,this.password) }>
+                <Button variant="primary" onClick= {() =>this.handleLogin(this.username) } >
                     Submit
                 </Button>
                 </Form>
