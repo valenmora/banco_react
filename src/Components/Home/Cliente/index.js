@@ -1,79 +1,26 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {api_sucursales} from './../../Constants/api_url_sucursales'
-import datosSucursal from './datosSucursal';
-import {Table} from 'react-bootstrap';
+import { Tab, Tabs} from 'react-bootstrap';
 
-class Cliente extends Component {
+import Mensajes from './Acciones/consulta';
+import Sucursal from './Acciones/datosSucursal';
+import AgenteCuenta from './Acciones/datosAgente';
 
-    constructor(){
-        super();
-        this.state = {
-            sucursales: [],
-            isFetch: true,
-        }
-    }
-
-    componentDidMount() {
-        fetch(api_sucursales).then(response => {
-            return response.json();
-        })
-        .then (data => {
-            this.setState( {sucursales: data, isFetch: false})
-
-        });
-    }
-    
-    
-    render(){
-        if(this.state.isFetch){
-            return 'Loading ...'
-        }
-
-        return(
-           
-            <div className="container">
-                <div className="row mb-4" >
-                <p></p>
-                <div className="col-sm-12 grid-margin">
-                    <div className="card h-100">
-                    <h4 className="card-header"> Sucursales </h4>
-                    <div className="card-body">
-                        <Table striped bordered hover>
-                        <thead>
-                            <tr>
-                            <th> Dirección </th>
-                            <th> Ciudad</th>
-                            <th> Región/Estado </th>
-                            <th> Teléfono de contacto </th>
-                            <th> Email </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        { this.state.sucursales.results.map( sucursal =>  {
-                            return (
-                                <tr>
-                                
-                                <th> { sucursal.location.street.name } ,{ sucursal.location.street.number} </th>
-                                <th> { sucursal.location.city } </th>
-                                <th> { sucursal.location.state} </th>
-                                <th> { sucursal.location.postcode} </th>
-                                <th> #</th>
-
-                                </tr>
-                            )
-                            })
-                        }
-                        </tbody>
-                        </Table>
-                    </div>
-                    </div>
-                </div>
+class index extends Component {
+    render() {
+        return (
+            <div>
+                <div className="menuAdmin">
+                    <div className="p-4 bd-highlight"> 
+                        <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+                            <Tab eventKey="home" title="Agente de cuenta" > <AgenteCuenta /> </Tab> 
+                            <Tab eventKey="profile" title="Sucursales"> <Sucursal /> </Tab>
+                            <Tab eventKey="contact" title="Mensajes"> <Mensajes /> </Tab>
+                        </Tabs>
+                    </div> 
                 </div>
             </div>
-        )
-                    }
-};
+        );
+    }
+}
 
-
-export default Cliente;
+export default index;

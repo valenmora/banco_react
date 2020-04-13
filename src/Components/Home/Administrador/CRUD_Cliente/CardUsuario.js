@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import {api_banco} from '../../../../Constants/api_url';
-import { createStore } from 'redux';
 import { Button } from 'react-bootstrap';
-
-
-const store =  createStore(() => {}, 
-                window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
-/*nst action = value => ( { type: 'setUser', value: this.user }); */
+import { Tabs, Tab} from 'react-bootstrap';
 
 class CardUsuario extends Component {
     
@@ -35,9 +29,15 @@ class CardUsuario extends Component {
         
     }
    
+    handleClickEditar(){
+        return (      
+                <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+                <Tab eventKey="home" title="Lista de Usuarios" > </Tab> 
+            </Tabs>
+        );
+    }
 
     render() {
-       /* store.dispatch(action);*/
         console.log("->", this.state.user);
         if(this.state.isFetch){
             return 'Loading ...'
@@ -68,7 +68,7 @@ class CardUsuario extends Component {
                                     <th> { client.id.value} </th>
                                     <th> { client.location.city } </th>
                                     <th > 
-                                        <Button> Editar </Button> 
+                                        <Button onClick= {this.handleClickEditar }> Editar </Button> 
                                         <Button> Eliminar </Button> 
                                     </th>
                                     </tr>

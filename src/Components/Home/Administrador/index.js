@@ -5,7 +5,7 @@ import { Tabs , Tab} from 'react-bootstrap';
 import CardUsuario from './CRUD_Cliente/CardUsuario';
 import Sucursales from './CRUD_Sucursal/Sucursales';
 
-class index extends Component {
+class Administrador extends Component {
     
     /*componentDidMount(){
         console.log("Loanding...")
@@ -30,7 +30,7 @@ class index extends Component {
                 <div className="menuAdmin">
                     <div className="p-4 bd-highlight"> 
                         <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-                            <Tab eventKey="home" title="Lista de Usuarios" > <CardUsuario/></Tab>
+                            <Tab eventKey="home" title="Lista de Usuarios" > <CardUsuario/></Tab> 
                             <Tab eventKey="profile" title="Sucursales"> <Sucursales/> </Tab>
                             <Tab eventKey="contact" title="Asignacion Agente a Cliente"> </Tab>
                         </Tabs>
@@ -41,4 +41,4 @@ class index extends Component {
     }
 }
 
-export default index;
+export default Administrador;
