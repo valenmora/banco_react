@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'react-bootstrap';
 
-import {api_banco} from './../../../Constants/api_url';
+/*import {api_banco} from '../../../api/url';*/
 
 
 class Login extends Component {
@@ -26,7 +26,7 @@ class Login extends Component {
         }
     }
 
-    componentDidMount() {
+   /* componentDidMount() {
         fetch(api_banco).then(res => {
        return res.json();
    
@@ -36,7 +36,7 @@ class Login extends Component {
            
        })
        
-   }
+   }*/
 
     render() {
         console.log(".>", this.state.user);

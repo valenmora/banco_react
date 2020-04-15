@@ -1,34 +1,30 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import {api_banco} from '../../../../Constants/api_url';
+import {urlUsuarios} from '../../../../api/url';
 import { Button } from 'react-bootstrap';
 import { Tabs, Tab} from 'react-bootstrap';
 
 class CardUsuario extends Component {
     
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state = {
-            clientes: [],
-            isFetch:true,
-            user: []
+            clientes: []        
         }
     }
 
     componentDidMount() {
-         fetch(api_banco).then(res => {
-        return res.json();
-    
+        fetch(urlUsuarios).then(response => {
+            return response.json();
         })
-        .then(data => {
-            this.setState({clientes: data, isFetch: false,
-        user: data.results[0].login })
-            
-        })
-        
+        .then (data => {
+            this.setState( {clientes: data})
+
+        });
     }
-   
+
+
     handleClickEditar(){
         return (      
                 <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
@@ -37,19 +33,21 @@ class CardUsuario extends Component {
         );
     }
 
+    handleClickDetalle(){
+        return(
+            <div> loading... </div>
+        );
+    }
+
     render() {
-        console.log("->", this.state.user);
-        if(this.state.isFetch){
-            return 'Loading ...'
-        }
-        
+
         return (
-            
+    
         <div className="App">
             <div className="row mb-4 p-4" >
                 <div className="col-sm-12 ">
                     <div className="card-body">
-                        <Table striped bordered hover>
+                        <Table striped bordered hover onClick={this.handleClickDetalle}>
                             <thead>
                                 <tr>
                                 <th>Usuario </th>
@@ -60,12 +58,12 @@ class CardUsuario extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                            { this.state.clientes.results.map( client =>  {
+                            { this.state.clientes.map( client =>  {
                                 return (
                                     <tr>
                                     <th>{ client.login.username }</th>
-                                    <th> { client.name.last  }</th>
-                                    <th> { client.id.value} </th>
+                                    <th> { client.lastname}</th>
+                                    <th> { client.DNI} </th>
                                     <th> { client.location.city } </th>
                                     <th > 
                                         <Button onClick= {this.handleClickEditar }> Editar </Button> 

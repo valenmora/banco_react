@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {api_sucursales} from './../../../../Constants/api_url_sucursales'
+import {api_sucursales} from '../../../../api/api_url_sucursales'
 import {Table} from 'react-bootstrap';
 
 class datosSucursal extends Component {
