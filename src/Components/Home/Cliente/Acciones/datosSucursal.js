@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {api_sucursales} from '../../../../api/api_url_sucursales'
+import { urlAsignacion } from '../../../../api/url'
 import {Table} from 'react-bootstrap';
 
 class datosSucursal extends Component {
@@ -14,7 +14,7 @@ class datosSucursal extends Component {
     }
 
     componentDidMount() {
-        fetch(api_sucursales).then(response => {
+        fetch(urlAsignacion).then(response => {
             return response.json();
         })
         .then (data => {
@@ -27,8 +27,9 @@ class datosSucursal extends Component {
     render(){
         if(this.state.isFetch){
             return 'Loading ...'
+            
         }
-
+    console.log(this.state.sucursales[0]);
         return(
            
             <div className="container">
@@ -49,20 +50,15 @@ class datosSucursal extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                        { this.state.sucursales.results.map( sucursal =>  {
-                            return (
-                                <tr>
-                                
-                                <th> { sucursal.location.street.name } ,{ sucursal.location.street.number} </th>
-                                <th> { sucursal.location.city } </th>
-                                <th> { sucursal.location.state} </th>
-                                <th> { sucursal.location.postcode} </th>
-                                <th> #</th>
-
-                                </tr>
-                            )
-                            })
-                        }
+                        {/* this.state.sucursales[0]({ return ( ) })*/ }
+                            <tr>
+                            <th> { this.state.sucursales[0].id }  </th>
+                            <th> {this.state.sucursales[0].sucursal.ciudad}
+                            {/*{ s.location.city } ,{ s.location.street.number}*/}</th>
+                            <th> { this.state.sucursales[0].sucursal.region} </th>
+                            <th> { this.state.sucursales[0].sucursal.telefono} </th>
+                            <th> { this.state.sucursales[0].sucursal.correo} </th>
+                            </tr>
                         </tbody>
                         </Table>
                     </div>

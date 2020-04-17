@@ -2,14 +2,9 @@ import React , {Component} from 'react';
 import Header from './Header';
 import Login from './Login/Login'
 
-import { createStore } from 'redux';
-
-
-const store = createStore (() => {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
 class Home extends Component {
 
-   /* 
+/* 
     handleClick = clientes  => {
         if(this.state.isFetch)
         {

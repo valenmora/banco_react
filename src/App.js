@@ -9,7 +9,8 @@ import Administrador from './Components/Home/Administrador';
 import Cliente from './Components/Home/Cliente';
 import AgenteCuenta from './Components/Home/AgenteCuenta';
 
-
+import { store } from './store';
+import { setUsuario } from './actions';
 
 class App extends Component {  
   
