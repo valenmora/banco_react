@@ -1,30 +1,26 @@
-import React , {Component} from 'react';
-import PropTypes from 'prop-types';
+import React , { useEffect } from 'react';
+import { useDispatch , useSelector} from 'react-redux';
+
 import { Tabs , Tab} from 'react-bootstrap';
 
 import CardUsuario from './CRUD_Cliente/CardUsuario';
 import Sucursales from './CRUD_Sucursal/Sucursales';
+import queryString from 'query-string'
+import { searchUsuario } from '../../../redux/actions/search';
 
-class Administrador extends Component {
-    
-    /*componentDidMount(){
-        console.log("Loanding...")
-        return (
-            <Modal.Dialog  >
-                <Modal.Header closeButton >
-                </Modal.Header>
-                <Modal.Body >
-                    <p> ¡ Bienvenido Administrador !</p>
-                </Modal.Body>
+export default ({location}) => {
+        
+        const dispatch = useDispatch();
+        
+        const usuarios = useSelector(state => {
+            console.log(state);
+            
+        })
+        useEffect(() => {
+            const { user } = queryString.parse(location.search);
+            dispatch(searchUsuario({user}));
+        })
 
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={this.enableDiv}> Close </Button>
-                </Modal.Footer>
-            </Modal.Dialog>
-        );
-    }*/
-
-    render() {
         return (
             <div> 
                 <div className="menuAdmin">
@@ -38,7 +34,4 @@ class Administrador extends Component {
                 </div>
             </div>
         );
-    }
 }
-
-export default Administrador;

@@ -1,0 +1,15 @@
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form {
+    width: 450px;
+  }
+
+  .card-body img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+   }

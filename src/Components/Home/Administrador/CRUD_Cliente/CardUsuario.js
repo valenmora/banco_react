@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import {urlUsuarios} from '../../../../api/url';
+//import {urlUsuarios} from '../../../../api/url';
 import { Button } from 'react-bootstrap';
 import { Tabs, Tab} from 'react-bootstrap';
 
@@ -14,7 +14,7 @@ class CardUsuario extends Component {
         }
     }
 
-    componentDidMount() {
+    /*componentDidMount() {
         fetch(urlUsuarios).then(response => {
             return response.json();
         })
@@ -22,7 +22,7 @@ class CardUsuario extends Component {
             this.setState( {clientes: data})
 
         });
-    }
+    }*/
 
 
     handleClickEditar(){
@@ -58,7 +58,7 @@ class CardUsuario extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                            { this.state.clientes.map( client =>  {
+                            {/* this.state.clientes.map( client =>  {
                                 return (
                                     <tr>
                                     <th>{ client.login.username }</th>
@@ -73,7 +73,7 @@ class CardUsuario extends Component {
                                 
                                 )
                                 })
-                            }
+                            */}
                             </tbody>
                         </Table>
                     </div>

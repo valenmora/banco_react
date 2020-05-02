@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { urlAsignacion } from '../../../../api/url'
 import {Table} from 'react-bootstrap';
+//import { sucursales } from './../../../../api/url';
 
 class datosSucursal extends Component {
 
@@ -72,3 +72,7 @@ class datosSucursal extends Component {
 
 
 export default datosSucursal;
+
+
+
+

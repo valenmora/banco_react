@@ -1,4 +1,4 @@
-import React , {Component} from 'react';
+import React , {Fragment} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -9,27 +9,29 @@ import Administrador from './Components/Home/Administrador';
 import Cliente from './Components/Home/Cliente';
 import AgenteCuenta from './Components/Home/AgenteCuenta';
 
-import { store } from './store';
-import { setUsuario } from './actions';
+import { Provider } from 'react-redux';
+import PropTypes from 'prop-types';
 
-class App extends Component {  
-  
-  render() {      
-    return (
-      
-      <Router>
-        <div>
-            <Route exact path="" component={Home}/>
-            <Route exact path="/login" component={Login}/>
-            <Route exact path="/cliente" component={Cliente}/>
-            <Route exac path="/administrador" component={Administrador}/>
-            <Route exact path="/agenteCuenta" component={AgenteCuenta}/>
 
-        </div>
-      </Router>
-    );
-  }
+const App = ({store}) => ( 
+      <Fragment>
+        <Provider store={store}>
+          <Router>
+            <div>
+                <Route exact path="" component={Home}/>
+                <Route exact path="/login" component={Login}/>
+                <Route exact path="/cliente" component={Cliente}/>
+                <Route exact path="/administrador" component={Administrador}/>
+                <Route exact path="/agenteCuenta" component={AgenteCuenta}/>
+
+            </div>
+          </Router>
+        </Provider>
+      </Fragment>  
+);
+
+App.propTypes= {
+  store: PropTypes.object.isRequired
 }
-
 export default App ;
 

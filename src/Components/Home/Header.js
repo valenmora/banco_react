@@ -1,38 +1,47 @@
-import React, { Component } from 'react';
+import React, { useState, Fragment } from 'react';
 import { NavLink} from 'react-router-dom';
 import { Navbar, Nav, NavItem , NavbarBrand} from 'react-bootstrap';
 
 
-class Header extends Component {
-    render() {
+export default function  Header() {
+    const [visible ]= useState(false);
+
         return (
-            <div>
-                <Navbar expand="md" variant="dark" bg="dark">
-                    <NavbarBrand> React-Bootstrap </NavbarBrand>
-                        <Nav className="mr-auto " >
-                            <NavItem>
-                                <NavLink to="/" > Home   | </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to="/administrador" activeClassName="Administrador">|   Administrador   | </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to="/cliente" activeClassName="Cliente">|    Cliente   | </NavLink>
-                            </NavItem>
-                            <NavItem> 
-                                <NavLink to="/agenteCuenta" activeClassName="AgenteCuenta">|   Agente de cuenta </NavLink>
-                            </NavItem>
-                        </Nav>
-                        <NavLink to="/Login" activeClassName="Login"> Iniciar Sesion </NavLink>
-                </Navbar>
-            </div>
+            <Fragment>
+                    <Navbar expand="lg" variant="dark" bg="dark">
+                        <NavbarBrand> React-Bootstrap </NavbarBrand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="mr-auto " >
+                                <NavItem>
+                                    <NavLink to="/" > Home   | </NavLink>
+                                </NavItem>
+                                {/*
+                                    visible.visibleAdmin &&
+                                    <NavItem>
+                                        <NavLink to="/administrador" activeClassName="Administrador">|   Administrador   | </NavLink>
+                                    </NavItem>
+                                */},
+                                {
+                                    visible &&
+                                    <NavItem>
+                                        <NavLink to="/cliente" activeClassName="Cliente">|    Cliente   | </NavLink>
+                                    </NavItem>
+                                 },
+                                {
+                                    visible &&
+                                    <NavItem> 
+                                        <NavLink to="/agenteCuenta" activeClassName="AgenteCuenta">|   Agente de cuenta </NavLink>
+                                    </NavItem>
+                                }
+                                
+                            </Nav>
+                            <NavLink to="/login" activeClassName="Login"> Iniciar Sesion </NavLink>
+                        </Navbar.Collapse>
+                    </Navbar>
+            </Fragment>
         );
-    }
+    
 }
 
-export default Header;
 
-/*
-<NavLink to="/sucursales" activeClassName="DatosSucursales"> Sucursales </NavLink>
-                            <NavLink to="/clientes" activeClassName="CardUsuario"> Clientes </NavLink>
-*/
