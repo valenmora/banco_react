@@ -1,91 +1,41 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import { Table } from 'react-bootstrap';
-import PropTypes from 'prop-types';
 //import {urlUsuarios} from '../../../../api/url';
 import { Button } from 'react-bootstrap';
-import { Tabs, Tab} from 'react-bootstrap';
+import { withRouter } from 'react-router-dom';
 
-class CardUsuario extends Component {
-    
-    constructor(){
-        super();
-        this.state = {
-            clientes: []        
-        }
+const CardUsuario = ({DNI, lastname, name,username, id,  history }) => {
+
+    const handleSeeUserClick = () => {
+        history.push(`/administrador/${id}`);
     }
 
-    /*componentDidMount() {
-        fetch(urlUsuarios).then(response => {
-            return response.json();
-        })
-        .then (data => {
-            this.setState( {clientes: data})
-
-        });
-    }*/
-
-
-    handleClickEditar(){
-        return (      
-                <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-                <Tab eventKey="home" title="Lista de Usuarios" > </Tab> 
-            </Tabs>
-        );
-    }
-
-    handleClickDetalle(){
-        return(
-            <div> loading... </div>
-        );
-    }
-
-    render() {
-
-        return (
-    
-        <div className="App">
-            <div className="row mb-4 p-4" >
-                <div className="col-sm-12 ">
-                    <div className="card-body">
-                        <Table striped bordered hover onClick={this.handleClickDetalle}>
-                            <thead>
-                                <tr>
-                                <th>Usuario </th>
-                                <th>Apellido </th>
-                                <th> DNI </th>
-                                <th> Ciudad</th>
-                                <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {/* this.state.clientes.map( client =>  {
-                                return (
-                                    <tr>
-                                    <th>{ client.login.username }</th>
-                                    <th> { client.lastname}</th>
-                                    <th> { client.DNI} </th>
-                                    <th> { client.location.city } </th>
-                                    <th > 
-                                        <Button onClick= {this.handleClickEditar }> Editar </Button> 
-                                        <Button> Eliminar </Button> 
-                                    </th>
-                                    </tr>
-                                
-                                )
-                                })
-                            */}
-                            </tbody>
-                        </Table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        );
-    }
-}
-
-CardUsuario.propTypes = {
-    cliente: PropTypes.array,
+    console.log(history)
+    return (
+        <Table striped bordered hover>
+            <thead>
+                <tr>
+                <th>Usuario </th>
+                <th>DNI </th>
+                <th>Apellido </th>
+                <th>Nombre </th>
+                <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th> {username} </th>
+                <th> { DNI } </th>
+                <th> { lastname}</th>
+                <th> { name} </th>
+                <th > 
+                    <Button onClick={handleSeeUserClick}> Ver Mas/Editar </Button> 
+                </th>
+                </tr>
+            </tbody>
+        </Table>
+    );
 };
 
-export default CardUsuario;
+export default withRouter(CardUsuario);
+

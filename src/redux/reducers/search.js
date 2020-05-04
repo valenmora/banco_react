@@ -12,7 +12,6 @@ export default function (state= initialState, action){
             return { ...state, isLoading: false , user: null};
             break;
         case SEARCH_LOGIN_COMPLETE:
-            console.log(action);
             return { ...state, isLoading: false, userResults: action.results.data};
             break;
         default:

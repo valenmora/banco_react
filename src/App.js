@@ -11,6 +11,7 @@ import AgenteCuenta from './Components/Home/AgenteCuenta';
 
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
+import UsuarioDetalle from './Components/Home/Administrador/CRUD_Cliente/UsuarioDetalle';
 
 
 const App = ({store}) => ( 
@@ -23,7 +24,7 @@ const App = ({store}) => (
                 <Route exact path="/cliente" component={Cliente}/>
                 <Route exact path="/administrador" component={Administrador}/>
                 <Route exact path="/agenteCuenta" component={AgenteCuenta}/>
-
+                <Route exact path="/administrador/:id" component={UsuarioDetalle} />
             </div>
           </Router>
         </Provider>
