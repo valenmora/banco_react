@@ -4,13 +4,12 @@ import { Table } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 
-const CardUsuario = ({DNI, lastname, name,username, id,  history }) => {
+const CardUsuario = ({DNI, Lastname, Name,Username, id,  history }) => {
 
     const handleSeeUserClick = () => {
         history.push(`/administrador/${id}`);
     }
 
-    console.log(history)
     return (
         <Table striped bordered hover>
             <thead>
@@ -24,10 +23,10 @@ const CardUsuario = ({DNI, lastname, name,username, id,  history }) => {
             </thead>
             <tbody>
                 <tr>
-                <th> {username} </th>
+                <th> {Username} </th>
                 <th> { DNI } </th>
-                <th> { lastname}</th>
-                <th> { name} </th>
+                <th> { Lastname}</th>
+                <th> { Name} </th>
                 <th > 
                     <Button onClick={handleSeeUserClick}> Ver Mas/Editar </Button> 
                 </th>

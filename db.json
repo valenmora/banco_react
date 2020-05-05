@@ -2,141 +2,141 @@
   "admin": [
     {
       "id":0,
-      "gender": "male",
-      "name": "Lorenzo",
-      "lastname": "Jimenez",
+      "Gender": "male",
+      "Name": "Lorenzo",
+      "Lastname": "Jimenez",
       "DNI": "22952013",
-      "birthdate": "1982-08-21",
-      "location": {
-        "street":"Av Colombres 600",
-        "city": "Lomas de Zamora",
-        "state": "Buenos Aires"
+      "Birthday": "1982-08-21",
+      "Location": {
+        "Street":"Av Colombres 600",
+        "City": "Lomas de Zamora",
+        "State": "Buenos Aires"
         },
-      "email": "lorenzo.jimenez@example.com",
-      "phone": "929-864-875",
-      "login": {
-        "username": "admin001",
-        "password": "password00",
-        "roles": "admin"
+      "Email": "lorenzo.jimenez@example.com",
+      "Phone": "929-864-875",
+      "Login": {
+        "Username": "admin001",
+        "Password": "Password00",
+        "Roles": "admin"
         }
       },
       {
         "id":1,
-        "gender": "male",
-        "name": "Christian",
-        "lastname": "Delgado",
+        "Gender": "male",
+        "Name": "Christian",
+        "Lastname": "Delgado",
         "DNI": "38373456",
-        "birthdate": "1997-04-12",
-        "location": {
-          "street":"Av Cazón 1301",
-          "city": "Tigre",
-          "state": "Buenos Aires"
+        "Birthday": "1997-04-12",
+        "Location": {
+          "Street":"Av Cazón 1301",
+          "City": "Tigre",
+          "State": "Buenos Aires"
         },
-        "email": "delgadotigre@example.com",
-        "phone": "049-857-805",
-        "login": {
-          "username": "client003",
-          "password": "password003",
-          "roles": "user"
+        "Email": "delgadotigre@example.com",
+        "Phone": "049-857-805",
+        "Login": {
+          "Username": "client003",
+          "Password": "Password003",
+          "Roles": "user"
         }
       },
       {
         "id":2,
-        "gender": "female",
-        "name": "Nieves",
-        "lastname": "Delgano",
+        "Gender": "female",
+        "Name": "Nieves",
+        "Lastname": "Delgano",
         "DNI": "41323454",
-        "birthdate": "1998-12-12",
-        "location": {
-          "street":"Dorrego 9318",
-          "city": "Villa del parque",
-          "state": "CABA"
+        "Birthday": "1998-12-12",
+        "Location": {
+          "Street":"Dorrego 9318",
+          "City": "Villa del parque",
+          "State": "CABA"
           },
-        "email": "nieves.delgado@example.com",
-        "phone": "929-864-875",
-        "login": {
-          "username": "nieves490",
-          "password": "leng",
-          "roles": "user"
+        "Email": "nieves.delgado@example.com",
+        "Phone": "929-864-875",
+        "Login": {
+          "Username": "nieves490",
+          "Password": "leng",
+          "Roles": "user"
         }
       },
       {
         "id":3,
-        "gender": "male",
-        "name": "Nicolas",
-        "lastname": "Mendez",
+        "Gender": "male",
+        "Name": "Nicolas",
+        "Lastname": "Mendez",
         "DNI": "43094344",
-        "birthdate": "1998-08-01",
-        "location": {
-          "street":"Av Rivadavia 9318",
-          "city": "Liniers",
-          "state": "CABA"
+        "Birthday": "1998-08-01",
+        "Location": {
+          "Street":"Av Rivadavia 9318",
+          "City": "Liniers",
+          "State": "CABA"
         },
-        "email": "mendeznico001@example.com",
-        "phone": "672-494-807",
-        "login": {
-          "username": "mendez001",
-          "password": "blue",
-          "roles": "user"
+        "Email": "mendeznico001@example.com",
+        "Phone": "672-494-807",
+        "Login": {
+          "Username": "mendez001",
+          "Password": "blue",
+          "Roles": "user"
         }
       },
       {
         "id":4,
-        "gender": "female",
-        "name": "Claudia",
-        "lastname": "Gonzalez",
+        "Gender": "female",
+        "Name": "Claudia",
+        "Lastname": "Gonzalez",
         "DNI": "27433902",
-        "birthdate": "1971-01-20",
-        "location": {
-          "street":"Av Corrientes 4348",
-          "city": "Parque Centenario",
-          "state": "Buenos Aires"
+        "Birthday": "1971-01-20",
+        "Location": {
+          "Street":"Av Corrientes 4348",
+          "City": "Parque Centenario",
+          "State": "Buenos Aires"
           },
-        "email": "clauGonzalez@example.com",
-        "phone": "909-454-865",
-        "login": {
-          "username": "gclau02",
-          "password": "abcdef02",
-          "roles": "agent"
+        "Email": "clauGonzalez@example.com",
+        "Phone": "909-454-865",
+        "Login": {
+          "Username": "gclau02",
+          "Password": "abcdef02",
+          "Roles": "agent"
         }
       },
       {
         "id":5,
-        "gender": "famale",
-        "name": "Celia",
-        "lastname": "Jimenez",
+        "Gender": "famale",
+        "Name": "Celia",
+        "Lastname": "Jimenez",
         "DNI": "40329480",
-        "birthdate": "1997-04-21",
-        "location": {
-          "street":"Arévalo 2902",
-          "city": "Palermo",
-          "state": "CABA"
+        "Birthday": "1997-04-21",
+        "Location": {
+          "Street":"Arévalo 2902",
+          "City": "Palermo",
+          "State": "CABA"
         },
-        "email": "cejimenez@example.com",
-        "phone": "919-864-075",
-        "login": {
-          "username": "palmeras6",
-          "password": "epoca0",
-          "roles": "agent"
+        "Email": "cejimenez@example.com",
+        "Phone": "919-864-075",
+        "Login": {
+          "Username": "palmeras6",
+          "Password": "epoca0",
+          "Roles": "agent"
         }
       }
   ],
   "sucursales": [
     {
       "id": 0,
-      "direccion": "Av Rivadavia 11707",
-      "ciudad": "Liniers",
-      "region": "Buenos Aires",
-      "telefono": "1586691470",
-      "correo": "bancoDatos@gmail.com"
+      "Direccion": "Av Rivadavia 11707",
+      "Ciudad": "Liniers",
+      "Region": "Buenos Aires",
+      "Telefono": "1586691470",
+      "Correo": "bancoDatos@gmail.com"
     },
     {
       "id": 1,
-      "direccion": "Av. Montes de Oca 701",
-      "ciudad": "Barracas",
-      "region": "Buenos Aires",
-      "telefono": "1533118912",
-      "correo": "bancoBarracas@gmail.com"
+      "Direccion": "Av. Montes de Oca 701",
+      "Ciudad": "Barracas",
+      "Region": "Buenos Aires",
+      "Telefono": "1533118912",
+      "Correo": "bancoBarracas@gmail.com"
     }
   ],
   "asignaciones":[
@@ -144,51 +144,51 @@
       "id":0,
       "usuarios":{
           "id":1,
-          "gender": "male",
-          "name": "Christian",
-          "lastname": "Delgado",
+          "Gender": "male",
+          "Name": "Christian",
+          "Lastname": "Delgado",
           "DNI": "38373456",
-          "birthdate": "1997-04-12",
-          "location": {
-            "street":"Av Cazón 1301",
-            "city": "Tigre",
-            "state": "Buenos Aires"
+          "Birthday": "1997-04-12",
+          "Location": {
+            "Street":"Av Cazón 1301",
+            "City": "Tigre",
+            "State": "Buenos Aires"
           },
-          "email": "delgadotigre@example.com",
-          "phone": "049-857-805",
-          "login": {
-            "username": "client003",
-            "password": "password003",
-            "roles": "user"
+          "Email": "delgadotigre@example.com",
+          "Phone": "049-857-805",
+          "Login": {
+            "Username": "client003",
+            "Password": "Password003",
+            "Roles": "user"
           }
       }
       ,
       "sucursal":{
           "id":1,
-          "direccion": "Av. Montes de Oca 701",
-          "ciudad": "Barracas",
-          "region": "Buenos Aires",
-          "telefono": "1533118912",
-          "correo": "bancoBarracas@gmail.com"
+          "Direccion": "Av. Montes de Oca 701",
+          "Ciudad": "Barracas",
+          "Region": "Buenos Aires",
+          "Telefono": "1533118912",
+          "Correo": "bancoBarracas@gmail.com"
       },
       "usuario":{
         "id":4,
-        "gender": "female",
-        "name": "Claudia",
-        "lastname": "Gonzalez",
+        "Gender": "female",
+        "Name": "Claudia",
+        "Lastname": "Gonzalez",
         "DNI": "27433902",
-        "birthdate": "1971-01-20",
-        "location": {
-          "street":"Av Corrientes 4348",
-          "city": "Parque Centenario",
-          "state": "Buenos Aires"
+        "Birthday": "1971-01-20",
+        "Location": {
+          "Street":"Av Corrientes 4348",
+          "City": "Parque Centenario",
+          "State": "Buenos Aires"
           },
-        "email": "clauGonzalez@example.com",
-        "phone": "909-454-865",
-        "login": {
-          "username": "gclau02",
-          "password": "abcdef02",
-          "roles": "agent"
+        "Email": "clauGonzalez@example.com",
+        "Phone": "909-454-865",
+        "Login": {
+          "Username": "gclau02",
+          "Password": "abcdef02",
+          "Roles": "agent"
         }
       }
     },
@@ -196,51 +196,51 @@
       "id":1,
       "usuarios":{
           "id":2,
-          "gender": "female",
-          "name": "Nieves",
-          "lastname": "Delgano",
+          "Gender": "female",
+          "Name": "Nieves",
+          "Lastname": "Delgano",
           "DNI": "41323454",
-          "birthdate": "1998-12-12",
-          "location": {
-            "street":"Dorrego 9318",
-            "city": "Villa del parque",
-            "state": "CABA"
+          "Birthday": "1998-12-12",
+          "Location": {
+            "Street":"Dorrego 9318",
+            "City": "Villa del parque",
+            "State": "CABA"
             },
-          "email": "nieves.delgado@example.com",
-          "phone": "929-864-875",
-          "login": {
-            "username": "nieves490",
-            "password": "leng",
-            "roles": "user"
+          "Email": "nieves.delgado@example.com",
+          "Phone": "929-864-875",
+          "Login": {
+            "Username": "nieves490",
+            "Password": "leng",
+            "Roles": "user"
           }
       }
       ,
       "sucursal":{
           "id":1,
-          "direccion": "Av. Montes de Oca 701",
-          "ciudad": "Barracas",
-          "region": "Buenos Aires",
-          "telefono": "1533118912",
-          "correo": "bancoBarracas@gmail.com"
+          "Direccion": "Av. Montes de Oca 701",
+          "Ciudad": "Barracas",
+          "Region": "Buenos Aires",
+          "Telefono": "1533118912",
+          "Correo": "bancoBarracas@gmail.com"
       },
       "usuario":{
           "id":5,
-          "gender": "famale",
-          "name": "Celia",
-          "lastname": "Jimenez",
+          "Gender": "famale",
+          "Name": "Celia",
+          "Lastname": "Jimenez",
           "DNI": "40329480",
-          "birthdate": "1997-04-21",
-          "location": {
-            "street":"Arévalo 2902",
-            "city": "Palermo",
-            "state": "CABA"
+          "Birthday": "1997-04-21",
+          "Location": {
+            "Street":"Arévalo 2902",
+            "City": "Palermo",
+            "State": "CABA"
           },
-          "email": "cejimenez@example.com",
-          "phone": "919-864-075",
-          "login": {
-            "username": "palmeras6",
-            "password": "epoca0",
-            "roles": "agent"
+          "Email": "cejimenez@example.com",
+          "Phone": "919-864-075",
+          "Login": {
+            "Username": "palmeras6",
+            "Password": "epoca0",
+            "Roles": "agent"
           }
       }
     },
@@ -248,51 +248,51 @@
       "id":2,
       "usuarios":{
           "id":3,
-          "gender": "male",
-          "name": "Nicolas",
-          "lastname": "Mendez",
+          "Gender": "male",
+          "Name": "Nicolas",
+          "Lastname": "Mendez",
           "DNI": "43094344",
-          "birthdate": "1998-08-01",
-          "location": {
-            "street":"Av Rivadavia 9318",
-            "city": "Liniers",
-            "state": "CABA"
+          "Birthday": "1998-08-01",
+          "Location": {
+            "Street":"Av Rivadavia 9318",
+            "City": "Liniers",
+            "State": "CABA"
           },
-          "email": "mendeznico001@example.com",
-          "phone": "672-494-807",
-          "login": {
-            "username": "mendez001",
-            "password": "blue",
-            "roles": "user"
+          "Email": "mendeznico001@example.com",
+          "Phone": "672-494-807",
+          "Login": {
+            "Username": "mendez001",
+            "Password": "blue",
+            "Roles": "user"
           }
       }
       ,
       "sucursal":{
           "id":0,
-          "direccion": "Av Rivadavia 11707",
-          "ciudad": "Liniers",
-          "region": "Buenos Aires",
-          "telefono": "1586691470",
-          "correo": "bancoDatos@gmail.com"
+          "Direccion": "Av Rivadavia 11707",
+          "Ciudad": "Liniers",
+          "Region": "Buenos Aires",
+          "Telefono": "1586691470",
+          "Correo": "bancoDatos@gmail.com"
       },
       "usuario":{
         "id":4,
-        "gender": "female",
-        "name": "Claudia",
-        "lastname": "Gonzalez",
+        "Gender": "female",
+        "Name": "Claudia",
+        "Lastname": "Gonzalez",
         "DNI": "27433902",
-        "birthdate": "1971-01-20",
-        "location": {
-          "street":"Av Corrientes 4348",
-          "city": "Parque Centenario",
-          "state": "Buenos Aires"
+        "Birthday": "1971-01-20",
+        "Location": {
+          "Street":"Av Corrientes 4348",
+          "City": "Parque Centenario",
+          "State": "Buenos Aires"
           },
-        "email": "clauGonzalez@example.com",
-        "phone": "909-454-865",
-        "login": {
-          "username": "gclau02",
-          "password": "abcdef02",
-          "roles": "agent"
+        "Email": "clauGonzalez@example.com",
+        "Phone": "909-454-865",
+        "Login": {
+          "Username": "gclau02",
+          "Password": "abcdef02",
+          "Roles": "agent"
         }
       }
     }

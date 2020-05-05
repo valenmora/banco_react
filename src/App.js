@@ -11,7 +11,7 @@ import AgenteCuenta from './Components/Home/AgenteCuenta';
 
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
-import UsuarioDetalle from './Components/Home/Administrador/CRUD_Cliente/UsuarioDetalle';
+import UsuarioDetalle from './Components/Home/Administrador/CRUD_Cliente/Detalle';
 
 
 const App = ({store}) => ( 
