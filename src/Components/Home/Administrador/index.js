@@ -5,9 +5,10 @@ import { Tabs , Tab} from 'react-bootstrap';
 
 import CardUsuario from './CRUD_Cliente/CardUsuario';
 import Sucursales from './CRUD_Sucursal/Sucursales';
+import Asignaciones from './Asignaciones/Asignacion';
 import queryString from 'query-string'
-import { searchUsuario, loadSucursales } from '../../../redux/actions/search';
-import { userResults, sucursalesResults } from '../../../redux/selector';
+import { searchUsuario, loadSucursales, loadAsignaciones } from '../../../redux/actions/search';
+import { userResults, sucursalesResults , asignacionesResults} from '../../../redux/selector';
 
 export default ({location}) => {
         
@@ -16,12 +17,15 @@ export default ({location}) => {
         const usuarios = useSelector(state => userResults(state))
 
         const sucursales = useSelector(state => sucursalesResults(state))
+        
+        const asignaciones = useSelector(state => asignacionesResults(state))
 
         useEffect(() => {
             const { user } = queryString.parse(location.search);
-            if ( user && !usuarios && !sucursales){
+            if ( user && !usuarios && !sucursales & !asignaciones){
                 dispatch(searchUsuario({user}));
                 dispatch(loadSucursales({user}));
+                dispatch(loadAsignaciones({user}));
             }
             
         })
@@ -37,6 +41,12 @@ export default ({location}) => {
             }
         }
 
+        const renderAsignaciones = () => {
+            if(asignaciones){
+                return asignaciones.map((value, index ) => <Asignaciones key={index} {...value} /> )   
+            }
+        }
+
         return (
             <div> 
                 <div className="menuAdmin" >
@@ -44,7 +54,7 @@ export default ({location}) => {
                         <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" >
                             <Tab eventKey="home" title="Lista de Usuarios" style={{  padding: "40px"}}> { renderUsers() } </Tab> 
                             <Tab eventKey="profile" title="Sucursales" style={{  padding: "40px"}}> { renderSucursales() }</Tab>
-                            <Tab eventKey="contact" title="Asignacion Agente a Cliente" style={{  padding: "40px"}}> </Tab>
+                            <Tab eventKey="contact" title="Asignacion Agente a Cliente" style={{  padding: "40px"}}> { renderAsignaciones() } </Tab>
                         </Tabs>
                     </div> 
                 </div>

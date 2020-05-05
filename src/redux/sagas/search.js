@@ -1,5 +1,6 @@
 import { put, call, takeLatest} from 'redux-saga/effects';
-import { SEARCH_LOGIN_START, 
+import { 
+    SEARCH_LOGIN_START, 
     SEARCH_LOGIN_ERROR, 
     SEARCH_LOGIN_COMPLETE,
     SEARCH_USUARIO_BY_ID_START, 
@@ -8,6 +9,9 @@ import { SEARCH_LOGIN_START,
     LOAD_SUCURSAL_START, 
     LOAD_SUCURSAL_ERROR, 
     LOAD_SUCURSAL_COMPLETE,
+    LOAD_ASIGNACIONES_START,
+    LOAD_ASIGNACIONES_ERROR,
+    LOAD_ASIGNACIONES_COMPLETE
 } from '../../contans/actionsTypes';
 import { apiCall } from '../api'
 
@@ -38,8 +42,17 @@ export function* loadSucursales({payload}){
     }
 }
 
+export function* loadAsignaciones({payload}){
+    try{
+        const asignaciones = yield call(apiCall, `asignaciones`, null, null, 'GET'   );
+        yield put({type: LOAD_ASIGNACIONES_COMPLETE, asignaciones });
+    } catch(error){
+        yield put ({type: LOAD_ASIGNACIONES_ERROR, error});
+    }
+}
 export default function* search() {
     yield takeLatest(SEARCH_LOGIN_START, searchLogin);
     yield takeLatest(SEARCH_USUARIO_BY_ID_START, searchUserById);
     yield takeLatest(LOAD_SUCURSAL_START, loadSucursales);
+    yield takeLatest(LOAD_ASIGNACIONES_START, loadAsignaciones);
 }

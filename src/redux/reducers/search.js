@@ -7,7 +7,10 @@ import {  SEARCH_LOGIN_START,
     SEARCH_USUARIO_BY_ID_COMPLETE,
     LOAD_SUCURSAL_START,
     LOAD_SUCURSAL_ERROR,
-    LOAD_SUCURSAL_COMPLETE
+    LOAD_SUCURSAL_COMPLETE,
+    LOAD_ASIGNACIONES_START,
+    LOAD_ASIGNACIONES_ERROR,
+    LOAD_ASIGNACIONES_COMPLETE
 } from './../../contans/actionsTypes';
 
 const initialState ={};
@@ -40,6 +43,15 @@ export default function (state= initialState, action){
             break;
         case LOAD_SUCURSAL_COMPLETE:
             return { ...state, isLoading: false, sucursalesResults: action.sucursales.data};
+            break;
+        case LOAD_ASIGNACIONES_START:
+            return { ...state, isLoading: true };
+            break;
+        case LOAD_ASIGNACIONES_ERROR:
+            return { ...state, isLoading: false , asignacionesResults: null};
+            break;
+        case LOAD_ASIGNACIONES_COMPLETE:
+            return { ...state, isLoading: false, asignacionesResults: action.asignaciones.data};
             break;
         default:
             return {...state}
