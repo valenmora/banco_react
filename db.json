@@ -2,6 +2,7 @@
   "admin": [
     {
       "id":0,
+      "activo":true,
       "Gender": "male",
       "Name": "Lorenzo",
       "Lastname": "Jimenez",
@@ -22,6 +23,7 @@
       },
       {
         "id":1,
+        "activo":true,
         "Gender": "male",
         "Name": "Christian",
         "Lastname": "Delgado",
@@ -42,6 +44,7 @@
       },
       {
         "id":2,
+        "activo":true,
         "Gender": "female",
         "Name": "Nieves",
         "Lastname": "Delgano",
@@ -62,6 +65,7 @@
       },
       {
         "id":3,
+        "activo":true,
         "Gender": "male",
         "Name": "Nicolas",
         "Lastname": "Mendez",
@@ -82,6 +86,7 @@
       },
       {
         "id":4,
+        "activo":true,
         "Gender": "female",
         "Name": "Claudia",
         "Lastname": "Gonzalez",
@@ -102,6 +107,7 @@
       },
       {
         "id":5,
+        "activo":true,
         "Gender": "famale",
         "Name": "Celia",
         "Lastname": "Jimenez",

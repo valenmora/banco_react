@@ -24,3 +24,4 @@ export const loadAsignaciones = payload => ({
     type: LOAD_ASIGNACIONES_START,
     payload
 });
+

@@ -1,17 +1,19 @@
 import React, {useEffect} from 'react';
+import { get } from 'lodash';
+
 import {InputGroup, FormControl, Container, Row, Col} from 'react-bootstrap';
-
 import {useDispatch, useSelector} from 'react-redux';
-import {userResult as userResultSelector} from '../../../../../redux/selector';
 
+import {userResult as userResultSelector} from '../../../../../redux/selector';
 import { searchUsuarioById } from '../../../../../redux/actions/search'
 
 export default ({match}) => {
 
+
     const dispatch  = useDispatch();
     const userResult  = useSelector(state => userResultSelector(state));
 
-    console.log(userResult.name);
+    console.log(userResult);
     
     useEffect(() =>{
         if(!userResult){
@@ -22,10 +24,8 @@ export default ({match}) => {
 
     return (
         <Container>
-            
             <Row > 
                 <Col>
-                
                     <InputGroup className="mb-3">
                         <InputGroup.Prepend>
                         <InputGroup.Text id="basic-addon1"></InputGroup.Text>

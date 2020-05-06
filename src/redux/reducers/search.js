@@ -10,7 +10,7 @@ import {  SEARCH_LOGIN_START,
     LOAD_SUCURSAL_COMPLETE,
     LOAD_ASIGNACIONES_START,
     LOAD_ASIGNACIONES_ERROR,
-    LOAD_ASIGNACIONES_COMPLETE
+    LOAD_ASIGNACIONES_COMPLETE,
 } from './../../contans/actionsTypes';
 
 const initialState ={};

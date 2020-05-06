@@ -1,7 +1,7 @@
 import React from 'react';
-import {Table} from 'react-bootstrap';
+import {Table, Button} from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+
 
  const Asignaciones = ({ id, usuarios, sucursal, usuario, aprobado, history }) => {
 

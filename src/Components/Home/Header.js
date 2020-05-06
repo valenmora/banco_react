@@ -1,11 +1,23 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import { NavLink} from 'react-router-dom';
 import { Navbar, Nav, NavItem , NavbarBrand} from 'react-bootstrap';
+import { withRouter } from 'react-router-dom';
+import queryString from 'query-string'
 
+const Header = ({location}) => {
+    const [visible, setVisible ]= useState(false);
+    
 
-export default function  Header() {
-    const [visible ]= useState(false);
+    const existe = queryString.parse(location.search);
 
+    useEffect(() => {
+        if(existe){
+            setVisible(true);
+        }
+        
+    })
+    
+    console.log(existe)
         return (
             <Fragment>
                     <Navbar expand="lg" variant="dark" bg="dark">
@@ -36,7 +48,7 @@ export default function  Header() {
                                 }
                                 
                             </Nav>
-                            <NavLink to="/login" activeClassName="Login"> Iniciar Sesion </NavLink>
+                            <NavLink to="/login" activeClassName="Login"> { visible ? 'Iniciar Sesion' : 'Cerrar sesion'}</NavLink>
                         </Navbar.Collapse>
                     </Navbar>
             </Fragment>
@@ -45,3 +57,4 @@ export default function  Header() {
 }
 
 
+export default withRouter(Header);

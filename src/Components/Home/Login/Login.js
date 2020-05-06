@@ -5,13 +5,11 @@ import {Modal , Button} from 'react-bootstrap';
 function  Login({history}) {
 
     const [show, setShow] = useState(false); 
-
     const handleClose = () => setShow(false);
-    
+
     const [isError, setError] = useState(false);
 
     const [mensaje, setMensaje] = useState();
-    
     const [datos, setDatos ]= useState({
         usuario: '',
         contrasena: ''
@@ -25,11 +23,10 @@ function  Login({history}) {
     }
 
     const handleClick = () => {
-        // (datos.usuario === 'user' && datos.contrasena === "user123") ||  (datos.usuario === 'agent' && datos.contrasena === 'agent123')
-        /*setShow({
-            show: true
-        })*/
-            if(datos.usuario === 'admin' && datos.contrasena === 'admin123')
+
+            if( (datos.usuario === 'admin' && datos.contrasena === 'admin123') || 
+                (datos.usuario === 'user' && datos.contrasena === 'user123') || 
+                (datos.usuario === 'agent' && datos.contrasena === 'agent123') )
             {      
                 setMensaje(`Bienvenido ${datos.usuario}`)
                 setError(true)
@@ -42,16 +39,14 @@ function  Login({history}) {
     }
 
     const handleOpenShow = () => {
-        history.push(`/administrador?user=${datos.usuario}`)
+        if(datos.usuario === 'admin'){
+            history.push(`/administrador?user=${datos.usuario}`)
+        } else if (datos.usuario === 'user' ){
+            history.push(`/cliente?user=${datos.usuario}`)
+        }else{
+            history.push(`/agenteCuenta?user=${datos.usuario}`)
 
-
-/*        if(datos.usuario === 'user'){
-            history.push(`cliente?user=${datos.usuario}`)
-
-        } else {
-            history.push(`agenteCuenta?user=${datos.usuario}`)
-
-        }*/
+        }
     }
     
     return (

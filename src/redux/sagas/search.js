@@ -11,7 +11,7 @@ import {
     LOAD_SUCURSAL_COMPLETE,
     LOAD_ASIGNACIONES_START,
     LOAD_ASIGNACIONES_ERROR,
-    LOAD_ASIGNACIONES_COMPLETE
+    LOAD_ASIGNACIONES_COMPLETE,
 } from '../../contans/actionsTypes';
 import { apiCall } from '../api'
 
@@ -50,9 +50,12 @@ export function* loadAsignaciones({payload}){
         yield put ({type: LOAD_ASIGNACIONES_ERROR, error});
     }
 }
+
+
 export default function* search() {
     yield takeLatest(SEARCH_LOGIN_START, searchLogin);
     yield takeLatest(SEARCH_USUARIO_BY_ID_START, searchUserById);
     yield takeLatest(LOAD_SUCURSAL_START, loadSucursales);
     yield takeLatest(LOAD_ASIGNACIONES_START, loadAsignaciones);
+
 }
